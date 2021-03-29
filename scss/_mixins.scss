@@ -1,4 +1,7 @@
+
 /*
+
+---------- MIXINS ------------
 - Mixins are reusable chunks of code that can be used throughout stylesheets
 - Mixins can be created directly in my stylesheet, or imported from outside frameworks/libraries
 - Use @include to apply all properties of a mixin on the root level or within a selector
@@ -8,6 +11,7 @@
 - (4) Mixins can embed root level selectors with their own selectors 
 - (5) Mixins with arguments can either be left empty as seen in (2) or include a default parameter that can be overwritten.
 - (6) the box-shadow mixin contains a variable argument (...), which means it can take multiple arguments
+- (7) The @content directive will apply the content of the mixin after it is includedvia the @include directive. (*note: This mixin applys only to IE 6, and the * html selector only applies to this browser.) 
 */
 
 @mixin warning {
@@ -48,4 +52,11 @@
   box-shadow: $shadows;
   -moz-box-shadow: $shadows;
   -webkit-box-shadow: $shadows;
+}
+
+// (7)
+@mixin apply-to-ie-6 {
+  * html {
+    @content;
+  }
 }

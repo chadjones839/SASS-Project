@@ -1,4 +1,7 @@
+
 /*
+
+-------- MAIN ---------
 - Partial files begin with an underscore and are not mapped into css files by the Live SASS Compiler extension
 - (1) Partial files are imported in this format. Does not include the underscore or .scss
 - (2) Using the @include directive, mixins can be applied at the root level or within selectors
@@ -11,6 +14,8 @@
       - Add the parameters in reverse order, as long as the parameters are defined
 - (5) Hyphenated properties (font-family + font-weight) can be embedded on their similar first keyword as displayed here.
 - (6) The box-shadow mixin contains a variable argument, and I can pass in as many parameters as I would like
+- (7) the apply-to-ie-6 mixin contains a @content directive to the the html tag. any stlyes included within this @include directive will apply only to the IE 6 browser
+
 */
 
 // (1)
@@ -19,6 +24,13 @@
 
 // (2) (3)
 @include fancy-links(italic);
+
+// (7)
+@include apply-to-ie-6 {
+  body {
+    font-size: 125%;
+  }
+}
 
 // (5)
 body {
