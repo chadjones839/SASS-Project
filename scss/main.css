@@ -1,10 +1,46 @@
+/*
+- Partial files begin with an underscore and are not mapped into css files by the Live SASS Compiler extension
+- (1) Partial files are imported in this format. Does not include the underscore or .scss
+- (2) Using the @include directive, mixins can be applied at the root level or within selectors
+- (3) The fancy-links mixin accepts an argument that doesnt have a default assigned.
+- (4) The 'box' mixin contains two parameters that both contain defaults. From here, I can: 
+      - Add no parameters
+      - Add two parameters
+      - Add the first parameter ($radius)
+     *- Add the second parameter ($border) by definining the parameter, followed by property values
+      - Add the parameters in reverse order, as long as the parameters are defined
+- (5) Hyphenated properties (font-family + font-weight) can be embedded on their similar first keyword as displayed here.
+- (6) The box-shadow mixin contains a variable argument, and I can pass in as many parameters as I would like
+*/
+/*
+- Mixins are reusable chunks of code that can be used throughout stylesheets
+- Mixins can be created directly in my stylesheet, or imported from outside frameworks/libraries
+- Use @include to apply all properties of a mixin on the root level or within a selector
+- (1) Mixins can accept variable arguments and applied with a value when they're used
+- (2) Mixins can include other already defined mixins
+- (3) An embedded mixin with an argument would have it's argument also passed into its parent mixin.
+- (4) Mixins can embed root level selectors with their own selectors 
+- (5) Mixins with arguments can either be left empty as seen in (2) or include a default parameter that can be overwritten.
+- (6) the box-shadow mixin contains a variable argument (...), which means it can take multiple arguments
+*/
+a {
+  font-style: italic;
+  text-decoration: none;
+}
+
 body {
   font-family: Verdana, Arial, sans-serif;
+  font-weight: normal;
   color: #222222;
 }
 
 h1, h2, h3, h4 {
   font-family: "Palatino Linotype", Georgia, serif;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
 }
 
 p {
@@ -15,7 +51,18 @@ a {
   color: #f27731;
 }
 
+.warning-button {
+  background-color: orange;
+  color: white;
+  padding: 8px 12px;
+}
+
 #header {
+  border-radius: 6px;
+  border: 2px solid #333;
+  box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
+  -moz-box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
+  -webkit-box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
   height: 60px;
   background-color: #170a48;
 }

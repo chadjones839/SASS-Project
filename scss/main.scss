@@ -1,12 +1,41 @@
-@import 'variables';
+/*
+- Partial files begin with an underscore and are not mapped into css files by the Live SASS Compiler extension
+- (1) Partial files are imported in this format. Does not include the underscore or .scss
+- (2) Using the @include directive, mixins can be applied at the root level or within selectors
+- (3) The fancy-links mixin accepts an argument that doesnt have a default assigned.
+- (4) The 'box' mixin contains two parameters that both contain defaults. From here, I can: 
+      - Add no parameters
+      - Add two parameters
+      - Add the first parameter ($radius)
+     *- Add the second parameter ($border) by definining the parameter, followed by property values
+      - Add the parameters in reverse order, as long as the parameters are defined
+- (5) Hyphenated properties (font-family + font-weight) can be embedded on their similar first keyword as displayed here.
+- (6) The box-shadow mixin contains a variable argument, and I can pass in as many parameters as I would like
+*/
 
+// (1)
+@import 'variables';
+@import 'mixins';
+
+// (2) (3)
+@include fancy-links(italic);
+
+// (5)
 body {
-  font-family: $text-font;
+  font: {
+    family: $text-font;
+    weight: normal;
+  }
   color: $text-color;
 }
 
 h1, h2, h3, h4 {
   font-family: $headline-font;
+}
+
+// (2)
+h2 {
+  @include large-text;
 }
 
 p {
@@ -17,7 +46,16 @@ a {
   color: $link-color;
 }
 
+.warning-button {
+  @include warning;
+  padding: 8px 12px;
+}
+
+// (4)
 #header {
+  @include box ($border: 2px solid #333);
+  // (5)
+  @include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
   height: $header-height;
   background-color: $theme-color;
 

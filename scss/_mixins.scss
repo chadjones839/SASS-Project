@@ -1,0 +1,51 @@
+/*
+- Mixins are reusable chunks of code that can be used throughout stylesheets
+- Mixins can be created directly in my stylesheet, or imported from outside frameworks/libraries
+- Use @include to apply all properties of a mixin on the root level or within a selector
+- (1) Mixins can accept variable arguments and applied with a value when they're used
+- (2) Mixins can include other already defined mixins
+- (3) An embedded mixin with an argument would have it's argument also passed into its parent mixin.
+- (4) Mixins can embed root level selectors with their own selectors 
+- (5) Mixins with arguments can either be left empty as seen in (2) or include a default parameter that can be overwritten.
+- (6) the box-shadow mixin contains a variable argument (...), which means it can take multiple arguments
+*/
+
+@mixin warning {
+  background-color: orange;
+  color: white;
+}
+
+@mixin large-text {
+  font: {
+    size: 22px;
+    weight: bold;
+  }
+}
+// (1)
+@mixin rounded($radius) {
+  border-radius: $radius; 
+}
+// A straight-forward include directive for this mixin would look something like this:
+// @include rounded(8px);
+
+// (4)
+@mixin box ($radius: 6px, $border: 1px solid #000) {
+  // (3)
+  @include rounded($radius);
+  border: $border;
+}
+
+// (2)
+@mixin fancy-links($font-style) {
+  a {
+    font-style: $font-style;
+    text-decoration: none;
+  }
+}
+
+// (6)
+@mixin box-shadow ($shadows...) {
+  box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+}
