@@ -19,8 +19,11 @@
 */
 
 // (1)
-@import 'variables';
-@import 'mixins';
+@import 'partials/variables';
+@import 'partials/mixins';
+
+@include google-font("Alegreya+Sans");
+@include google-font("Titillium+Web")
 
 // (2) (3)
 @include fancy-links(italic);
