@@ -21,7 +21,7 @@ The course provided starting html files. I wrote all the styling as the course i
 - [X] **Media Queries** 
 - [X] **Operators** 
 - [X] **Functions**
-- [ ] **Inheritance** 
+- [X] **Inheritance** 
 - [ ] **Conditional Directives** 
 - [ ] **Loops** 
 - [ ] **SCSS Frameworks** 
