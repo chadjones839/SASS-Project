@@ -18,8 +18,9 @@ The course provided starting html files. I wrote all the styling as the course i
 - [X] **Partials** 
 - [X] **Mixins**
 - [X] **Imports** 
-- [ ] **Media Queries** 
-- [ ] **Operators** 
+- [X] **Media Queries** 
+- [X] **Operators** 
+- [X] **Functions**
 - [ ] **Inheritance** 
 - [ ] **Conditional Directives** 
 - [ ] **Loops** 
