@@ -1,10 +1,61 @@
+// === THEME ===
+// Allowed values: Dark, Light, Cyberpunk, Default
+$theme: Dark;
+
+// === BRAND ===
+// Allowed values: blue-beans, robers-rovers, pastry-pizza
+$brand: rogers-rovers;
+
 // === COLORS ===
+// This is the Default Theme
 $text-color: #222222;
+$body-background-color: #fff;
 $theme-color: #170a48;
 $secondary-color: #f27731;
 $ternary-color: #ccf962;
 $link-color: $secondary-color;
-$menu-item-color: white;
+$menu-item-color: $text-color;
+$list-item-background-color: #efefef;
+$button-background-color: orange;
+$button-text-color: white;
+
+@if $theme == Dark {
+  $text-color: #fff;
+  $body-background-color: #22222a;
+  $theme-color: #42424a;
+  $secondary-color: #c24721;
+  $ternary-color: #698932;
+  $link-color: $secondary-color;
+  $menu-item-color: $text-color;
+  $list-item-background-color: $theme-color;
+  $button-background-color: $secondary-color;
+  $button-text-color: $text-color;
+} 
+@else if $theme == Light {
+  $text-color: #000;
+  $body-background-color: #fff;
+  $theme-color: #372a27;
+  $secondary-color: #d26741;
+  $ternary-color: #b9da63;
+  $link-color: $secondary-color;
+  $menu-item-color: $text-color;
+  $list-item-background-color: $theme-color;
+  $button-background-color: $secondary-color;
+  $button-text-color: $text-color;
+} 
+@else if $theme == Cyberpunk {
+  $text-color: #d8caca;
+  $body-background-color: #29132e;
+  $theme-color: #321450;
+  $secondary-color: #de004e;
+  $ternary-color: #f887ff;
+  $link-color: $secondary-color;
+  $menu-item-color: $text-color;
+  $list-item-background-color: $theme-color;
+  $button-background-color: #860029;
+  $button-text-color: $text-color;
+}
+// Cannot use else to define Default values. Need to be separate from if/else and above.
 
 // === FONTS ===
 $text-font: "Allegreya Sans", Arial, sans-serif;

@@ -22,7 +22,7 @@ The course provided starting html files. I wrote all the styling as the course i
 - [X] **Operators** 
 - [X] **Functions**
 - [X] **Inheritance** 
-- [ ] **Conditional Directives** 
+- [X] **Conditional Directives** 
 - [ ] **Loops** 
 - [ ] **SCSS Frameworks** 
 

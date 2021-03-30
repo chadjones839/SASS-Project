@@ -55,7 +55,9 @@ body {
     family: $text-font;
     size: em(18px);
   }
+  background-color: $body-background-color;
   color: $text-color;
+
   @include large-screens {
     font-size: 125%;
   }
@@ -76,6 +78,10 @@ p {
 
 a {
   color: $link-color;
+
+  @include blue-beans {
+    color: #8779ff;
+  }
 
   &:hover {
     color: darken($link-color, 15%)
@@ -174,7 +180,7 @@ a {
       border-bottom: 1px dashed #999;
 
       &:hover {
-        background-color: #efefef;
+        background-color: $list-item-background-color;
       }
     }
   }
@@ -184,4 +190,8 @@ a {
   clear: both;
   height: $footer-height;
   background-color: $ternary-color;
+
+  @include rogers-rovers {
+    border-top: 5px solid darken($ternary-color, 15%);
+  }
 }

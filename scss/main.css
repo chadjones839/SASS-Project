@@ -53,7 +53,8 @@ a {
 body {
   font-family: "Allegreya Sans", Arial, sans-serif;
   font-size: 1.125em;
-  color: #222222;
+  background-color: #22222a;
+  color: #fff;
 }
 
 @media only screen and (max-width: 960px) {
@@ -76,11 +77,11 @@ p {
 }
 
 a {
-  color: #f27731;
+  color: #c24721;
 }
 
 a:hover {
-  color: #ca510d;
+  color: #812f16;
 }
 
 .sub-title {
@@ -92,13 +93,13 @@ a:hover {
 }
 
 .warning-button, .cta-button, .super-cta-button {
-  background-color: orange;
-  color: white;
+  background-color: #c24721;
+  color: #fff;
   padding: 8px 12px;
 }
 
 .warning-button:hover, .cta-button:hover, .super-cta-button:hover {
-  background-color: #ffb733;
+  background-color: #dd6039;
 }
 
 .cta-button, .super-cta-button {
@@ -113,11 +114,11 @@ a:hover {
 #header {
   border-radius: 6px;
   border: 2px solid #333;
-  box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
-  -moz-box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
-  -webkit-box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
+  box-shadow: 2px 0px 4px #999, 1px 1px 6px #c24721;
+  -moz-box-shadow: 2px 0px 4px #999, 1px 1px 6px #c24721;
+  -webkit-box-shadow: 2px 0px 4px #999, 1px 1px 6px #c24721;
   height: 60px;
-  background-color: #170a48;
+  background-color: #42424a;
 }
 
 #header #main-menu li {
@@ -125,7 +126,7 @@ a:hover {
 }
 
 #header #main-menu a {
-  color: white;
+  color: #fff;
   padding: 6px 8px;
   border-bottom: 1px solid rgba(254, 254, 254, 0);
   -webkit-transition: border-bottom .5s;
@@ -168,12 +169,13 @@ a:hover {
 }
 
 #main #sidebar li:hover {
-  background-color: #efefef;
+  background-color: #42424a;
 }
 
 #footer {
   clear: both;
   height: 90px;
-  background-color: #ccf962;
+  background-color: #698932;
+  border-top: 5px solid #3e511e;
 }
 /*# sourceMappingURL=main.css.map */
