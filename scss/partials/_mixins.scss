@@ -14,6 +14,30 @@
 - (7) The @content directive will apply the content of the mixin after it is includedvia the @include directive. (*note: This mixin applys only to IE 6, and the * html selector only applies to this browser.) 
 */
 
+@mixin tiny-screens() {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin small-screens() {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin medium-screens() {
+  @media only screen and (max-width: 680px) {
+    @content;
+  }
+}
+
+@mixin large-screens() {
+  @media only screen and (max-width: 960px) {
+    @content;
+  }
+}
+
 @mixin google-font($font) {
   $font: unquote($font);
   @import url("https://fonts.googleapis.com/css?family=#{$font}");

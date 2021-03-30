@@ -18,12 +18,14 @@
 
 */
 
+
+
 // (1)
 @import 'partials/variables';
 @import 'partials/mixins';
 
 @include google-font("Alegreya+Sans");
-@include google-font("Titillium+Web")
+@include google-font("Titillium+Web");
 
 // (2) (3)
 @include fancy-links(italic);
@@ -42,6 +44,9 @@ body {
     weight: normal;
   }
   color: $text-color;
+  @include large-screens {
+    font-size: 125%;
+  }
 }
 
 h1, h2, h3, h4 {
@@ -91,6 +96,10 @@ a {
 
 #main {
   width: $content-width;
+  @include large-screens {
+    width: auto;
+    max-width: $content-width;
+  }
   margin-left: auto;
   margin-right: auto;
 
