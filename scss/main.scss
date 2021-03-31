@@ -18,8 +18,6 @@
 
 */
 
-
-
 // (1)
 @import 'partials/functions';
 @import 'partials/variables';
@@ -36,6 +34,36 @@
   body {
     font-size: 125%;
   }
+}
+
+// Use "to" instead of "through" to exclude upper bound
+@for $i from 1 through 6 {
+  .col-#{$i} {
+    width: $i * 2em;
+  }
+}
+
+$font-sizes: (tiny: 8px, small: 11px, medium: 13px, large: 18px);
+@each $name, $size in $font-sizes {
+  .#{$name} {
+    font-size: $size;
+  }
+}
+
+// List with 3 elements
+$speakers: bob-banker, patty-plume, sandra-smith;
+@each $speaker in $speakers {
+  .#{$speaker}-profile {
+    background-image: url('/iimg/#{$speaker}.png');
+  }
+}
+
+$j: 2;
+@while $j <= 8 {
+  .picture-#{$j} {
+    width: $j * 10%
+  }
+  $j: $j + 2;
 }
 
 // INHERITANCE
